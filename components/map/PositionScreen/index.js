@@ -4,7 +4,7 @@ import { StackNavigator } from 'react-navigation';
 import MapView from 'react-native-maps';
 
 
-class PositionScreen extends React.Component {
+export class PositionScreen extends React.Component {
 
     static navigationOptions = {
         title: 'Position'
