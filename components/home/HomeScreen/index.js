@@ -1,4 +1,4 @@
-import {Alert, StyleSheet, View} from "react-native";
+import {Alert, StyleSheet, View, Text} from "react-native";
 import React from "react";
 import t from 'tcomb-form-native'; // 0.6.9
 import { FormValidationMessage, Button } from 'react-native-elements'
@@ -46,6 +46,18 @@ export class HomeScreen extends React.Component {
 
     }
 
+    handleCreatePRAccount = () => {
+
+    }
+
+    handleCreateDeliveryAccount = () => {
+
+    }
+
+    handleScanBarcode = () => {
+        this.props.navigation.navigate('Scan');
+    }
+
 
 
     render() {
@@ -59,10 +71,32 @@ export class HomeScreen extends React.Component {
                 />
 
                 <Button
+                    style={{"marginBottom" : 30}}
                     backgroundColor={"#4bc8ff"}
                     title="Valider"
                     onPress={this.handleSubmit}
                 />
+                <Text style={{"marginBottom" : 30}} >Pas encore inscrit ?</Text>
+
+                <Button
+                    style={{"marginBottom" : 30}}
+                    backgroundColor={"#4bc8ff"}
+                    title="Créer un Point Relais"
+                    onPress={this.handleCreatePRAccount}
+                />
+                <Button
+                    style={{"marginBottom" : 30}}
+                    backgroundColor={"#4bc8ff"}
+                    title="Créer un Compte Livreur"
+                    onPress={this.handleCreateDeliveryAccount}
+                />
+
+                <Button
+                    backgroundColor={"#4bc8ff"}
+                    title="Scan d'un barcode"
+                    onPress={this.handleScanBarcode}
+                />
+
             </View>
 
         );
@@ -77,6 +111,7 @@ const styles = StyleSheet.create({
         marginTop: 50,
         padding: 20,
         backgroundColor: '#ffffff',
+        alignContent: 'center'
     },
     input: {
         borderWidth : 1,
